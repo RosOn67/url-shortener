@@ -1,5 +1,5 @@
 const express = require("express");
-const {getLongUrl} = require('../controller/controller.js');
+const {redirectUrl} = require('../controller/controller.js');
 
 const router = express.Router();
 
@@ -8,6 +8,6 @@ const router = express.Router();
 router.get("/", (req, res)=>{
     res.send("happy coding");
 })
-router.get("/:shortCode",getLongUrl)
 
+router.get("/:shortCode", redirectUrl);
 module.exports  = router;
